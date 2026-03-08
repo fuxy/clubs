@@ -1,0 +1,38 @@
+<?php
+
+namespace Database\Factories;
+
+use Illuminate\Database\Eloquent\Factories\Factory;
+
+/**
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Club>
+ */
+class ClubFactory extends Factory
+{
+    /**
+     * Define the model's default state.
+     *
+     * @return array<string, mixed>
+     */
+    public function definition(): array
+    {
+        return [
+            'name' => fake()->unique()->company(),
+            'slug' => fake()->unique()->slug(),
+            'user_id' => 1,
+            'city_id' => fake()->numberBetween(1, 3),
+            'body' => fake()->sentences(fake()->numberBetween(2, 15), true),
+            'area' => fake()->numberBetween(60, 150),
+            'age_from' => 3,
+            'age_to' => 15,
+            'capacity_children' => fake()->numberBetween(15, 30),
+            'capacity_adults' => fake()->numberBetween(15, 30),
+            'worktime' => 'Понеделник - Неделя\n09:30 ч. - 21:00 ч.',
+            'catering' => fake()->boolean(),
+            'garden' => fake()->boolean(),
+            'site' => fake()->url(),
+            'created_at' => fake()->dateTimeBetween('-2 day'),
+            'updated_at' => fake()->dateTimeBetween('-2 day'),
+        ];
+    }
+}
