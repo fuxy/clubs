@@ -2,16 +2,13 @@
 
 namespace App\Filament\Resources\Clubs\Schemas;
 
-use App\Filament\Resources\Clubs\ClubResource;
 use App\Models\City;
 use App\Models\Club;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\RichEditor;
-use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\Toggle;
-use Filament\Schemas\Components\Fieldset;
 use Filament\Schemas\Components\Section;
 use Filament\Schemas\Schema;
 use Tapp\FilamentGoogleAutocomplete\Forms\Components\GoogleAutocomplete;
@@ -116,25 +113,34 @@ class ClubForm
                     ->columnSpanFull(),
                 Section::make('Информация')
                     ->schema([
-                        TextInput::make('age_from')
-                            ->label('Години от')
-                            ->required()
-                            ->numeric(),
-                        TextInput::make('age_to')
-                            ->label('Години до')
-                            ->required()
-                            ->numeric(),
-                        TextInput::make('capacity_children')
-                            ->label('Капацитет за деца')
-                            ->required()
-                            ->numeric(),
-                        TextInput::make('capacity_adults')
-                            ->label('Капацитет за възрастни')
-                            ->required()
-                            ->numeric(),
+                        Section::make('Възраст на децата')
+                            ->schema([
+                                TextInput::make('age_from')
+                                    ->label('Мин.')
+                                    ->required()
+                                    ->numeric(),
+                                TextInput::make('age_to')
+                                    ->label('Макс.')
+                                    ->required()
+                                    ->numeric(),
+                            ])
+                            ->columns(2),
+                        Section::make('Капацитет')
+                            ->schema([
+                                TextInput::make('capacity_children')
+                                    ->label('Деца')
+                                    ->required()
+                                    ->numeric(),
+                                TextInput::make('capacity_adults')
+                                    ->label('Възрастни')
+                                    ->required()
+                                    ->numeric(),
+                            ])
+                            ->columns(2),
                         TextInput::make('area')
                             ->label('Площ')
                             ->required()
+                            ->suffix('кв/м')
                             ->numeric(),
                         Textarea::make('worktime')
                             ->label('Работно време')
@@ -149,7 +155,9 @@ class ClubForm
                             ->label('Сайт')
                             ->url()
                             ->required()
-                    ]),
+                            ->columnSpanFull()
+                    ])
+                    ->columns(2),
                 Section::make('Адрес на обекта')
                     ->schema([
                         GoogleAutocomplete::make('google_search')
@@ -185,11 +193,9 @@ class ClubForm
                             ]),
                     ]),
                 FileUpload::make('images')
+                    ->label('Изображения')
                     ->multiple()
                     ->reorderable(),
-                Select::make('user_id')
-                    ->relationship('user', 'name')
-                    ->required(),
             ]);
     }
 }
