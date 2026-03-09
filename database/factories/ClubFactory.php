@@ -31,6 +31,8 @@ class ClubFactory extends Factory
             'catering' => fake()->boolean(),
             'garden' => fake()->boolean(),
             'site' => fake()->url(),
+            'address' => fake()->address(),
+            'coordinates' => '42.7042801, 23.3053544',
             'created_at' => fake()->dateTimeBetween('-2 day'),
             'updated_at' => fake()->dateTimeBetween('-2 day'),
         ];

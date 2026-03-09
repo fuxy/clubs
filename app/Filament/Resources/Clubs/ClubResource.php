@@ -18,9 +18,15 @@ class ClubResource extends Resource
 {
     protected static ?string $model = Club::class;
 
-    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
+    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedFaceSmile;
 
     protected static ?string $recordTitleAttribute = 'name';
+
+    protected static ?string $navigationLabel = 'Детски клубове';
+
+    protected static ?string $modelLabel = 'Детски клуб';
+
+    protected static ?string $pluralModelLabel = 'Детски клубове';
 
     public static function form(Schema $schema): Schema
     {

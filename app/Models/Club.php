@@ -25,6 +25,13 @@ class Club extends Model
         'catering',
         'garden',
         'site',
+        'images',
+        'address',
+        'coordinates',
+    ];
+
+    protected $casts = [
+        'images' => 'array'
     ];
 
     public function user(): BelongsTo
@@ -39,6 +46,6 @@ class Club extends Model
 
     public function city()
     {
-        return $this->hasOne(City::class, 'city_id');
+        return $this->hasOne(City::class, 'id', 'city_id');
     }
 }

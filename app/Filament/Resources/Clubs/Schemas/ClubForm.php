@@ -195,6 +195,7 @@ class ClubForm
                 FileUpload::make('images')
                     ->label('Изображения')
                     ->multiple()
+                    ->image()
                     ->reorderable(),
             ]);
     }

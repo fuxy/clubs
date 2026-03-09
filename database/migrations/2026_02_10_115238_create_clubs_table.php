@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-return new class () extends Migration {
+return new class() extends Migration {
     /**
      * Run the migrations.
      */
@@ -26,7 +26,9 @@ return new class () extends Migration {
             $table->boolean('catering');
             $table->boolean('garden');
             $table->string('site');
-            /* $table->json('location')->nullable(); */
+            $table->string('images')->nullable();
+            $table->string('address');
+            $table->string('coordinates');
             $table->timestamps();
         });
     }
