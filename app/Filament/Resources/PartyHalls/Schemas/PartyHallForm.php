@@ -1,20 +1,18 @@
 <?php
 
-namespace App\Filament\Resources\Clubs\Schemas;
+namespace App\Filament\Resources\PartyHalls\Schemas;
 
-use App\Models\City;
-use App\Models\Club;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\RichEditor;
 use Filament\Forms\Components\Select;
-use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Textarea;
+use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Toggle;
 use Filament\Schemas\Components\Section;
 use Filament\Schemas\Schema;
 use Tapp\FilamentGoogleAutocomplete\Forms\Components\GoogleAutocomplete;
 
-class ClubForm
+class PartyHallForm
 {
     public static function configure(Schema $schema): Schema
     {
@@ -149,14 +147,6 @@ class ClubForm
                         Toggle::make('catering')
                             ->label('Кетъринг')
                             ->required(),
-                        Toggle::make('garden')
-                            ->label('Градина')
-                            ->required(),
-                        TextInput::make('site')
-                            ->label('Сайт')
-                            ->url()
-                            ->required()
-                            ->columnSpanFull()
                     ])
                     ->columns(2),
                 Section::make('Адрес на обекта')

@@ -21,6 +21,7 @@ class ClubFactory extends Factory
             'slug' => fake()->unique()->slug(),
             'user_id' => 1,
             'city_id' => fake()->numberBetween(1, 3),
+            'region_id' => fake()->numberBetween(1, 6),
             'body' => fake()->sentences(fake()->numberBetween(2, 15), true),
             'area' => fake()->numberBetween(60, 150),
             'age_from' => 3,

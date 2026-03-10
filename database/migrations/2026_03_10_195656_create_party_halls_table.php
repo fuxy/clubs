@@ -10,7 +10,7 @@ return new class () extends Migration {
      */
     public function up(): void
     {
-        Schema::create('clubs', function (Blueprint $table) {
+        Schema::create('party_halls', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
             $table->bigInteger('city_id');
@@ -25,8 +25,6 @@ return new class () extends Migration {
             $table->integer('age_to');
             $table->text('worktime');
             $table->boolean('catering');
-            $table->boolean('garden');
-            $table->string('site');
             $table->string('images')->nullable();
             $table->string('address');
             $table->string('coordinates');
@@ -39,6 +37,6 @@ return new class () extends Migration {
      */
     public function down(): void
     {
-        Schema::dropIfExists('clubs');
+        Schema::dropIfExists('party_halls');
     }
 };

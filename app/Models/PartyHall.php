@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
-class Club extends Model
+class PartyHall extends Model
 {
     use HasFactory;
 
@@ -24,8 +24,6 @@ class Club extends Model
         'age_to',
         'worktime',
         'catering',
-        'garden',
-        'site',
         'images',
         'address',
         'coordinates',
@@ -38,11 +36,6 @@ class Club extends Model
     public function user(): BelongsTo
     {
         return $this->belongsTo(User::class);
-    }
-
-    public function location()
-    {
-        return $this->morphToMany(Location::class, 'locationable');
     }
 
     public function city()
