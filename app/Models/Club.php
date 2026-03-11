@@ -40,11 +40,6 @@ class Club extends Model
         return $this->belongsTo(User::class);
     }
 
-    public function location()
-    {
-        return $this->morphToMany(Location::class, 'locationable');
-    }
-
     public function city()
     {
         return $this->belongsTo(City::class, 'city_id', 'id');

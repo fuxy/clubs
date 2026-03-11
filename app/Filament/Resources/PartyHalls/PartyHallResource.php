@@ -18,9 +18,15 @@ class PartyHallResource extends Resource
 {
     protected static ?string $model = PartyHall::class;
 
-    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
+    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedCake;
 
     protected static ?string $recordTitleAttribute = 'name';
+
+    protected static ?string $navigationLabel = 'Парти зали';
+
+    protected static ?string $modelLabel = 'Парти зала';
+
+    protected static ?string $pluralModelLabel = 'Парти зали';
 
     public static function form(Schema $schema): Schema
     {

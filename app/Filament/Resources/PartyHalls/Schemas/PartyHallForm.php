@@ -2,6 +2,8 @@
 
 namespace App\Filament\Resources\PartyHalls\Schemas;
 
+use App\Models\City;
+use App\Models\PartyHall;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\RichEditor;
 use Filament\Forms\Components\Select;
@@ -165,7 +167,7 @@ class PartyHallForm
                                     ]),
                                 TextInput::make('city')
                                     ->label('Град')
-                                    ->afterStateHydrated(function (TextInput $component, ?Club $record) {
+                                    ->afterStateHydrated(function (TextInput $component, ?PartyHall $record) {
                                         if (! is_null($record)) {
                                             $city = City::find($record?->city_id);
                                             if ($city) {
