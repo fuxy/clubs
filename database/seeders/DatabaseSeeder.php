@@ -20,5 +20,7 @@ class DatabaseSeeder extends Seeder
         $this->call(PogachaTableSeeder::class);
         $this->call(RestaurantTableSeeder::class);
         $this->call(PartyAgencyTableSeeder::class);
+        $this->call(DecoratingAgencyTableSeeder::class);
+        $this->call(PastryTableSeeder::class);
     }
 }
