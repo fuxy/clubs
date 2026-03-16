@@ -18,7 +18,7 @@ class EscapeRoomResource extends Resource
 {
     protected static ?string $model = EscapeRoom::class;
 
-    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
+    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedArrowTopRightOnSquare;
 
     protected static ?string $recordTitleAttribute = 'name';
 
