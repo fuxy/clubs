@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Pogacha extends Model
+class Restaurant extends Model
 {
     use HasFactory;
 
@@ -16,13 +16,7 @@ class Pogacha extends Model
         'city_id',
         'region_id',
         'user_id',
-        'capacity_children',
-        'capacity_adults',
-        'area',
-        'age_from',
-        'age_to',
         'worktime',
-        'catering',
         'images',
         'address',
         'coordinates',

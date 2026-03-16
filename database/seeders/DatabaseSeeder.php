@@ -17,5 +17,7 @@ class DatabaseSeeder extends Seeder
         $this->call(ClubTableSeeder::class);
         $this->call(PartyHallTableSeeder::class);
         $this->call(EscapeRoomTableSeeder::class);
+        $this->call(PogachaTableSeeder::class);
+        $this->call(RestaurantTableSeeder::class);
     }
 }
